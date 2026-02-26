@@ -1,0 +1,526 @@
+/* =============================================================
+   pages.css — Page-specific styles shared across all inner pages
+   (about.html, projects.html, contact.html)
+   Loaded after style.css on each inner page.
+============================================================= */
+
+/* ── Scrollable inner pages ─────────────────────────────── */
+body.inner-page {
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050508;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00f2ff;
+    border-radius: 2px;
+}
+
+/* ── Page wrapper ────────────────────────────────────────── */
+.page-wrapper {
+    min-height: 100vh;
+    background: #050508;
+    position: relative;
+}
+
+.page-wrapper::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0, 242, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Section headings ────────────────────────────────────── */
+.section-label {
+    font-size: .62rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #00f2ff;
+    opacity: .6;
+    margin-bottom: .4rem;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #e2e8f0;
+    margin-bottom: 1.6rem;
+}
+
+/* ── Terminal card (About page) ──────────────────────────── */
+.terminal-card {
+    background: rgba(10, 10, 20, 0.95);
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    clip-path: polygon(6% 0, 100% 0, 100% 90%, 94% 100%, 0 100%, 0 10%);
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: repeating-linear-gradient(0deg,
+            transparent, transparent 3px,
+            rgba(0, 242, 255, 0.005) 3px, rgba(0, 242, 255, 0.005) 4px);
+    animation: scanlines 10s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanlines {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(50%);
+    }
+}
+
+.terminal-header {
+    background: rgba(0, 242, 255, 0.06);
+    border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.t-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* ── Skill bars (About page) ─────────────────────────────── */
+.skill-row {
+    margin-bottom: 1rem;
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: .7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+.skill-track {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 2px;
+    animation: fillBar 1.4s cubic-bezier(.23, 1, .32, 1) both;
+}
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
+
+/* ── Stat cards (About page) ─────────────────────────────── */
+.stat-card {
+    background: rgba(10, 10, 20, 0.8);
+    border: 1px solid rgba(0, 242, 255, 0.12);
+    padding: 1.4rem 1.2rem;
+    text-align: center;
+    clip-path: polygon(8% 0, 100% 0, 100% 80%, 92% 100%, 0 100%, 0 20%);
+    transition: all .25s ease;
+}
+
+.stat-card:hover {
+    border-color: rgba(0, 242, 255, .35);
+    box-shadow: 0 0 30px rgba(0, 242, 255, .08);
+    transform: translateY(-4px);
+}
+
+.stat-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #00f2ff;
+    text-shadow: 0 0 20px rgba(0, 242, 255, .6);
+    letter-spacing: -2px;
+}
+
+.stat-lbl {
+    font-size: .6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+/* ── Timeline (About page) ───────────────────────────────── */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(0, 242, 255, 0.15);
+}
+
+.tl-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.tl-dot {
+    position: absolute;
+    left: -26px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #00f2ff;
+    background: #050508;
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.tl-year {
+    font-size: .62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #00f2ff;
+    margin-bottom: 4px;
+}
+
+.tl-title {
+    font-size: .9rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    letter-spacing: 1px;
+}
+
+.tl-place {
+    font-size: .72rem;
+    color: #64748b;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.tl-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: .82rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* ── Tech badges (About page) ────────────────────────────── */
+.tech-badge {
+    padding: 5px 12px;
+    border: 1px solid rgba(0, 242, 255, .18);
+    font-size: .6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    background: rgba(0, 242, 255, .04);
+    transition: all .2s;
+}
+
+.tech-badge:hover {
+    border-color: #00f2ff;
+    color: #00f2ff;
+    box-shadow: 0 0 12px rgba(0, 242, 255, .15);
+}
+
+/* ── Project cards (Projects page) ──────────────────────── */
+.project-card {
+    background: rgba(10, 10, 20, .9);
+    border: 1px solid rgba(255, 255, 255, .06);
+    position: relative;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(.23, 1, .32, 1);
+    cursor: none;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 242, 255, .25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .5), 0 0 40px rgba(0, 242, 255, .06);
+}
+
+.card-accent {
+    height: 3px;
+    width: 100%;
+}
+
+.card-body-custom {
+    padding: 1.5rem;
+}
+
+.card-number {
+    font-size: .58rem;
+    letter-spacing: 4px;
+    color: #334155;
+    text-transform: uppercase;
+    margin-bottom: .6rem;
+}
+
+.card-title-custom {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -.5px;
+    color: #e2e8f0;
+    margin-bottom: .8rem;
+}
+
+.card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: .82rem;
+    color: #64748b;
+    line-height: 1.65;
+    margin-bottom: 1.2rem;
+}
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 1.2rem;
+}
+
+.card-tag {
+    padding: 3px 10px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    font-size: .58rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #64748b;
+    background: rgba(255, 255, 255, .03);
+}
+
+.card-links {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: .65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all .2s;
+    border: 1px solid transparent;
+}
+
+.card-link-primary {
+    border-color: rgba(0, 242, 255, .25);
+    color: #00f2ff;
+    background: rgba(0, 242, 255, .05);
+}
+
+.card-link-primary:hover {
+    background: #00f2ff;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 242, 255, .3);
+}
+
+.card-link-ghost {
+    border-color: rgba(255, 255, 255, .1);
+    color: #475569;
+}
+
+.card-link-ghost:hover {
+    border-color: rgba(255, 255, 255, .25);
+    color: #94a3b8;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 3px 10px;
+    background: rgba(0, 242, 255, .08);
+    border: 1px solid rgba(0, 242, 255, .2);
+    font-size: .55rem;
+    letter-spacing: 2px;
+    color: #00f2ff;
+    text-transform: uppercase;
+}
+
+/* ── Filter buttons (Projects page) ─────────────────────── */
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: #64748b;
+    padding: 6px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: none;
+    transition: all .2s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    border-color: #00f2ff;
+    color: #00f2ff;
+    background: rgba(0, 242, 255, .06);
+}
+
+/* ── Contact form (Contact page) ─────────────────────────── */
+.neon-input {
+    width: 100%;
+    background: rgba(10, 10, 20, 0.8);
+    border: 1px solid rgba(0, 242, 255, 0.15);
+    color: #e2e8f0;
+    padding: 14px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82rem;
+    outline: none;
+    transition: border-color .25s, box-shadow .25s;
+    border-radius: 2px;
+}
+
+.neon-input::placeholder {
+    color: #334155;
+    letter-spacing: 1px;
+}
+
+.neon-input:focus {
+    border-color: rgba(0, 242, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 242, 255, .08), inset 0 0 10px rgba(0, 242, 255, .03);
+}
+
+textarea.neon-input {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.field-label {
+    font-size: .62rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #475569;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.field-label span {
+    color: #00f2ff;
+    margin-right: 4px;
+}
+
+/* ── Info cards (Contact page) ───────────────────────────── */
+.info-card {
+    background: rgba(10, 10, 20, .8);
+    border: 1px solid rgba(0, 242, 255, .12);
+    padding: 1.4rem 1.2rem;
+    transition: all .25s;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-card:hover {
+    border-color: rgba(0, 242, 255, .3);
+    box-shadow: 0 0 20px rgba(0, 242, 255, .06);
+    transform: translateX(6px);
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 242, 255, .2);
+    color: #00f2ff;
+    font-size: 1rem;
+    background: rgba(0, 242, 255, .05);
+}
+
+.info-label {
+    font-size: .58rem;
+    letter-spacing: 3px;
+    color: #334155;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.info-val {
+    font-size: .82rem;
+    color: #94a3b8;
+}
+
+/* ── Social buttons (Contact page) ──────────────────────── */
+.social-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: #64748b;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.social-btn:hover {
+    color: #00f2ff;
+    border-color: rgba(0, 242, 255, .35);
+    box-shadow: 0 0 16px rgba(0, 242, 255, .12);
+    transform: translateY(-3px);
+}
+
+/* ── Send button feedback (Contact page) ─────────────────── */
+#send-btn.sending {
+    opacity: .6;
+    pointer-events: none;
+}
+
+#send-btn.sent {
+    background: #39ff14;
+    color: #000;
+    border-color: #39ff14;
+}

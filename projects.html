@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Nilay Shukla</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Shared Tailwind config -->
+    <script src="tw-config.js"></script>
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body class="bg-bg-dark text-slate-200 font-mono inner-page">
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <div class="page-wrapper">
+        <nav class="navbar fixed-top px-4 py-3 d-flex justify-content-between align-items-center" id="mainNav">
+            <a href="index.html" class="logo-brand text-decoration-none">
+                <span class="text-neon-cyan fw-bold" style="letter-spacing:3px"><span class="text-neon-pink">&gt;</span>
+                    Nilay Shukla</span>
+            </a>
+            <div class="d-flex gap-2">
+                <a href="index.html" class="nav-pill">Home</a>
+                <a href="about.html" class="nav-pill">About</a>
+                <a href="projects.html" class="nav-pill"
+                    style="color:#00f2ff;border-color:rgba(0,242,255,.2)">Projects</a>
+                <a href="contact.html" class="nav-pill">Contact</a>
+            </div>
+        </nav>
+
+        <div class="container-lg position-relative" style="padding-top:6rem;padding-bottom:4rem;z-index:10">
+            <div class="mb-4">
+                <p class="section-label">// projects.filter(awesome => true)</p>
+                <h1 class="hero-title mb-2">MY <span class="glitch" data-text="WORK">WORK</span></h1>
+                <p class="hero-sub" style="font-size:.85rem">Things I've built, shipped, and obsessed over.</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="d-flex flex-wrap gap-2 mb-5" id="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="javascript">JavaScript</button>
+                <button class="filter-btn" data-filter="security">Security</button>
+                <button class="filter-btn" data-filter="game">Game Dev</button>
+            </div>
+
+            <div class="row g-4" id="project-grid">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 project-item" data-tags="javascript game">
+                    <div class="project-card d-flex flex-column">
+                        <div class="card-accent" style="background:linear-gradient(90deg,#00f2ff,#0080ff)"></div>
+                        <span class="featured-badge"><i class="bi bi-star-fill me-1"
+                                style="font-size:.5rem"></i>Featured</span>
+                        <div class="card-body-custom d-flex flex-column" style="flex:1">
+                            <div class="card-number">PROJECT_01</div>
+                            <h3 class="card-title-custom" style="color:#00f2ff">Neon Flip</h3>
+                            <p class="card-desc">A physics-based arcade game built with Matter.js. Flip neon tiles and
+                                beat the clock in a chaotic playground.</p>
+                            <div class="card-tags">
+                                <span class="card-tag"
+                                    style="border-color:rgba(0,242,255,.2);color:#00f2ff">Matter.js</span>
+                                <span class="card-tag">JavaScript</span>
+                                <span class="card-tag">Game Dev</span>
+                            </div>
+                            <div class="card-links mt-auto">
+                                <a href="https://neoflipv2.netlify.app/" class="card-link card-link-primary"><i class="bi bi-play-fill"></i> Demo</a>
+                                <a href="https://github.com/Nilay503" class="card-link card-link-ghost"><i class="bi bi-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 project-item" data-tags="python javascript">
+                    <div class="project-card d-flex flex-column">
+                        <div class="card-accent" style="background:linear-gradient(90deg,#ff00e5,#a855f7)"></div>
+                        <span class="featured-badge"
+                            style="border-color:rgba(255,0,229,.2);color:#ff00e5;background:rgba(255,0,229,.06)"><i
+                                class="bi bi-star-fill me-1" style="font-size:.5rem"></i>Featured</span>
+                        <div class="card-body-custom d-flex flex-column" style="flex:1">
+                            <div class="card-number">PROJECT_02</div>
+                            <h3 class="card-title-custom" style="color:#ff00e5">PharmaNet</h3>
+                            <p class="card-desc">Full-stack pharmaceutical delivery dashboard with real-time GPS,
+                                inventory management, and automated reporting.</p>
+                            <div class="card-tags">
+                                <span class="card-tag"
+                                    style="border-color:rgba(255,0,229,.2);color:#ff00e5">Python</span>
+                                <span class="card-tag">React</span>
+                                <span class="card-tag">PostgreSQL</span>
+                            </div>
+                            <div class="card-links mt-auto">
+                                <a href="#" class="card-link"
+                                    style="border-color:rgba(255,0,229,.25);color:#ff00e5;background:rgba(255,0,229,.05)"><i
+                                        class="bi bi-arrow-up-right"></i> View</a>
+                                <a href="https://github.com/Nilay503" class="card-link card-link-ghost"><i class="bi bi-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 project-item" data-tags="python security">
+                    <div class="project-card d-flex flex-column">
+                        <div class="card-accent" style="background:linear-gradient(90deg,#39ff14,#00f2ff)"></div>
+                        <div class="card-body-custom d-flex flex-column" style="flex:1">
+                            <div class="card-number">PROJECT_03</div>
+                            <h3 class="card-title-custom" style="color:#39ff14">CyberSec Bot</h3>
+                            <p class="card-desc">Automation toolkit for security audits — vulnerability scanning, port
+                                analysis, and auto-generated PDF reports.</p>
+                            <div class="card-tags">
+                                <span class="card-tag"
+                                    style="border-color:rgba(57,255,20,.2);color:#39ff14">Python</span>
+                                <span class="card-tag">Nmap</span>
+                                <span class="card-tag">Security</span>
+                            </div>
+                            <div class="card-links mt-auto">
+                                <a href="#" class="card-link"
+                                    style="border-color:rgba(57,255,20,.25);color:#39ff14;background:rgba(57,255,20,.05)"><i
+                                        class="bi bi-terminal"></i> Demo</a>
+                                <a href="https://github.com/Nilay503" class="card-link card-link-ghost"><i class="bi bi-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-lg-4 col-md-6 project-item" data-tags="javascript python">
+                    <div class="project-card d-flex flex-column">
+                        <div class="card-accent" style="background:linear-gradient(90deg,#a855f7,#ff00e5)"></div>
+                        <div class="card-body-custom d-flex flex-column" style="flex:1">
+                            <div class="card-number">PROJECT_04</div>
+                            <h3 class="card-title-custom" style="color:#a855f7">AI Dashboard</h3>
+                            <p class="card-desc">Gemini AI-powered analytics dashboard with natural language querying,
+                                predictive charts, and real-time insights.</p>
+                            <div class="card-tags">
+                                <span class="card-tag" style="border-color:rgba(168,85,247,.2);color:#a855f7">Gemini
+                                    API</span>
+                                <span class="card-tag">React</span>
+                                <span class="card-tag">D3.js</span>
+                            </div>
+                            <div class="card-links mt-auto">
+                                <a href="#" class="card-link"
+                                    style="border-color:rgba(168,85,247,.25);color:#a855f7;background:rgba(168,85,247,.05)"><i
+                                        class="bi bi-robot"></i> Try It</a>
+                                <a href="https://github.com/Nilay503" class="card-link card-link-ghost"><i class="bi bi-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6 project-item" data-tags="javascript">
+                    <div class="project-card d-flex flex-column">
+                        <div class="card-accent" style="background:linear-gradient(90deg,#00f2ff,#39ff14)"></div>
+                        <div class="card-body-custom d-flex flex-column" style="flex:1">
+                            <div class="card-number">PROJECT_05</div>
+                            <h3 class="card-title-custom">Dev Portfolio</h3>
+                            <p class="card-desc">This very site — an interactive physics-based portfolio sandbox where
+                                project blocks are objects you can grab and toss.</p>
+                            <div class="card-tags">
+                                <span class="card-tag"
+                                    style="border-color:rgba(0,242,255,.2);color:#00f2ff">Matter.js</span>
+                                <span class="card-tag">Bootstrap 5</span>
+                                <span class="card-tag">Tailwind</span>
+                            </div>
+                            <div class="card-links mt-auto">
+                                <a href="index.html" class="card-link card-link-primary"><i class="bi bi-play-fill"></i>
+                                    Live</a>
+                                <a href="https://github.com/Nilay503" class="card-link card-link-ghost"><i class="bi bi-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6 project-item" data-tags="python security">
+                    <div class="project-card d-flex flex-column">
+                        <div class="card-accent" style="background:linear-gradient(90deg,#39ff14,#a855f7)"></div>
+                        <div class="card-body-custom d-flex flex-column" style="flex:1">
+                            <div class="card-number">PROJECT_06</div>
+                            <h3 class="card-title-custom" style="color:#39ff14">NetWatch</h3>
+                            <p class="card-desc">Real-time network traffic analyzer with anomaly detection. Flags
+                                suspicious activity and sends Telegram alerts.</p>
+                            <div class="card-tags">
+                                <span class="card-tag"
+                                    style="border-color:rgba(57,255,20,.2);color:#39ff14">Python</span>
+                                <span class="card-tag">Scapy</span>
+                                <span class="card-tag">Security</span>
+                            </div>
+                            <div class="card-links mt-auto">
+                                <a href="#" class="card-link"
+                                    style="border-color:rgba(57,255,20,.25);color:#39ff14;background:rgba(57,255,20,.05)"><i
+                                        class="bi bi-eye"></i> Demo</a>
+                                <a href="https://github.com/Nilay503" class="card-link card-link-ghost"><i class="bi bi-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="no-results" class="text-center mt-5" style="display:none">
+                <p style="color:#334155;font-size:.8rem;letter-spacing:2px">// no matching projects found</p>
+            </div>
+
+            <div class="mt-5 pt-3 d-flex flex-wrap gap-3">
+                <a href="https://github.com" target="_blank" class="neon-btn"><i class="bi bi-github me-2"></i>See All
+                    on GitHub</a>
+                <a href="contact.html" class="neon-btn neon-btn--ghost"><i class="bi bi-send me-2"></i>Hire Me</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const cursor = document.getElementById('cursor'), ring = document.getElementById('cursor-ring');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+        (function r() { rx += (mx - rx) * .14; ry += (my - ry) * .14; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(r) })();
+        document.querySelectorAll('a,button').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.style.width = '18px'; cursor.style.height = '18px'; cursor.style.background = '#ff00e5'; });
+            el.addEventListener('mouseleave', () => { cursor.style.width = '10px'; cursor.style.height = '10px'; cursor.style.background = '#00f2ff'; });
+        });
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const f = this.dataset.filter;
+                let any = false;
+                document.querySelectorAll('.project-item').forEach(item => {
+                    const show = f === 'all' || item.dataset.tags.includes(f);
+                    item.style.display = show ? '' : 'none';
+                    if (show) any = true;
+                });
+                document.getElementById('no-results').style.display = any ? 'none' : 'block';
+            });
+        });
+        document.querySelectorAll('.project-card').forEach((c, i) => {
+            c.style.opacity = '0'; c.style.transform = 'translateY(30px)';
+            setTimeout(() => { c.style.transition = 'opacity .5s ease,transform .5s ease'; c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }, 80 * i);
+        });
+    </script>
+</body>
+
+</html>

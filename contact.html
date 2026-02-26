@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Nilay Shukla</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Shared Tailwind config -->
+    <script src="tw-config.js"></script>
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="pages.css">
+</head>
+
+<body class="bg-bg-dark text-slate-200 font-mono inner-page">
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <div class="page-wrapper">
+
+        <!-- NAV -->
+        <nav class="navbar fixed-top px-4 py-3 d-flex justify-content-between align-items-center" id="mainNav">
+            <a href="index.html" class="logo-brand text-decoration-none">
+                <span class="text-neon-cyan fw-bold" style="letter-spacing:3px"><span class="text-neon-pink">&gt;</span>
+                    Nilay Shukla</span> 
+            </a>
+            <div class="d-flex gap-2">
+                <a href="index.html" class="nav-pill">Home</a>
+                <a href="about.html" class="nav-pill">About</a>
+                <a href="projects.html" class="nav-pill">Projects</a>
+                <a href="contact.html" class="nav-pill"
+                    style="color:#00f2ff;border-color:rgba(0,242,255,.2)">Contact</a>
+            </div>
+        </nav>
+
+        <div class="container-lg position-relative" style="padding-top:6rem;padding-bottom:4rem;z-index:10">
+
+            <!-- Header -->
+            <div class="mb-5">
+                <p class="section-label">// new Message().send()</p>
+                <h1 class="hero-title mb-2">GET IN <span class="glitch" data-text="TOUCH">TOUCH</span></h1>
+                <p class="hero-sub" style="font-size:.85rem">Open to opportunities, collabs, and interesting problems.
+                </p>
+            </div>
+
+            <div class="row g-5">
+
+                <!-- Left: Contact Form -->
+                <div class="col-lg-7">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <span class="t-dot" style="background:#ff5f57"></span>
+                            <span class="t-dot" style="background:#febc2e"></span>
+                            <span class="t-dot" style="background:#28c840"></span>
+                            <span class="ms-2"
+                                style="font-size:.65rem;color:#475569;letter-spacing:2px">send_message.js</span>
+                        </div>
+                        <div class="p-4">
+                            <form id="contact-form" novalidate>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-sm-6">
+                                        <label class="field-label"><span>//</span> name</label>
+                                        <input type="text" class="neon-input" id="fname" placeholder="Your_Name"
+                                            required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="field-label"><span>//</span> email</label>
+                                        <input type="email" class="neon-input" id="femail" placeholder="your@email.com"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="field-label"><span>//</span> subject</label>
+                                    <input type="text" class="neon-input" id="fsubject" placeholder="Project_Inquiry">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="field-label"><span>//</span> message</label>
+                                    <textarea class="neon-input" id="fmessage"
+                                        placeholder="Tell me about your project..." required></textarea>
+                                </div>
+
+                                <!-- Char counter -->
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <span id="char-count" style="font-size:.6rem;color:#334155;letter-spacing:2px">0 /
+                                        500 chars</span>
+                                    <span style="font-size:.6rem;color:#334155;letter-spacing:2px">
+                                        <span class="status-dot"
+                                            style="display:inline-block;vertical-align:middle;margin-right:5px"></span>ENCRYPTED
+                                    </span>
+                                </div>
+
+                                <button type="submit" class="neon-btn w-100 justify-content-center" id="send-btn">
+                                    <i class="bi bi-send me-2"></i> TRANSMIT MESSAGE
+                                </button>
+
+                                <!-- Feedback -->
+                                <div id="form-success" class="mt-3 text-center"
+                                    style="display:none;font-size:.72rem;color:#39ff14;letter-spacing:2px">
+                                    <i class="bi bi-check-circle me-2"></i> Message transmitted. I'll respond within
+                                    24hrs.
+                                </div>
+                                <div id="form-error" class="mt-3 text-center"
+                                    style="display:none;font-size:.72rem;color:#ff5f57;letter-spacing:2px">
+                                    <i class="bi bi-exclamation-triangle me-2"></i> Fill in required fields.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Info + Socials -->
+                <div class="col-lg-5">
+                    <div class="mb-4">
+                        <p class="section-label">// connection.info</p>
+                        <p style="font-family:'Inter',sans-serif;font-size:.88rem;color:#64748b;line-height:1.8">
+                            Whether you have a project in mind, want to collaborate, or just say hi —
+                            my inbox is always open. I respond within <span style="color:#00f2ff">24 hours</span>.
+                        </p>
+                    </div>
+
+                    <div class="d-flex flex-column gap-3 mb-5">
+                        <div class="info-card">
+                            <div class="info-icon"><i class="bi bi-envelope"></i></div>
+                            <div>
+                                <div class="info-label">Email</div>
+                                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nilay.work.in@gmail.com&su=Portfolio%20Inquiry" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block mb-0">
+                            <i class="fab fa-google mr-3"></i> <div class="info-val">nilay.work.in@gmail.com</div>
+                        </a>
+                                
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"
+                                style="border-color:rgba(255,0,229,.2);color:#ff00e5;background:rgba(255,0,229,.05)"><i
+                                    class="bi bi-geo-alt"></i></div>
+                            <div>
+                                <div class="info-label">Location</div>
+                                <div class="info-val">Ahmedabad, Gujarat &nbsp;·&nbsp; Open to Remote</div>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"
+                                style="border-color:rgba(57,255,20,.2);color:#39ff14;background:rgba(57,255,20,.05)"><i
+                                    class="bi bi-clock"></i></div>
+                            <div>
+                                <div class="info-label">Response Time</div>
+                                <div class="info-val">Within 24 Hours</div>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"
+                                style="border-color:rgba(168,85,247,.2);color:#a855f7;background:rgba(168,85,247,.05)">
+                                <i class="bi bi-briefcase"></i>
+                            </div>
+                            <div>
+                                <div class="info-label">Availability</div>
+                                <div class="info-val">Open to Freelance &amp; Full-time</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Socials -->
+                    <p class="section-label mb-3">// socials.connect()</p>
+                    <div class="social-row">
+                        <a href="https://github.com/Nilay503" class="social-btn" title="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-btn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-btn" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-btn" title="Discord"><i class="bi bi-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Cursor
+        const cursor = document.getElementById('cursor'), ring = document.getElementById('cursor-ring');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+        (function r() { rx += (mx - rx) * .14; ry += (my - ry) * .14; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(r) })();
+        document.querySelectorAll('a,button,input,textarea').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursor.style.width = '18px'; cursor.style.height = '18px'; cursor.style.background = '#ff00e5'; });
+            el.addEventListener('mouseleave', () => { cursor.style.width = '10px'; cursor.style.height = '10px'; cursor.style.background = '#00f2ff'; });
+        });
+
+        // Char counter
+        const msg = document.getElementById('fmessage');
+        const counter = document.getElementById('char-count');
+        msg.addEventListener('input', () => {
+            const len = msg.value.length;
+            counter.textContent = `${len} / 500 chars`;
+            counter.style.color = len > 450 ? '#ff00e5' : '#334155';
+        });
+
+        // Form logic
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('fname').value.trim();
+            const email = document.getElementById('femail').value.trim();
+            const message = msg.value.trim();
+            const errEl = document.getElementById('form-error');
+            const sucEl = document.getElementById('form-success');
+            const btn = document.getElementById('send-btn');
+
+            errEl.style.display = 'none';
+            sucEl.style.display = 'none';
+
+            if (!name || !email || !message) {
+                errEl.style.display = 'block'; return;
+            }
+
+            btn.classList.add('sending');
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Transmitting...';
+
+            // Simulate send (replace with real fetch/EmailJS as needed)
+            setTimeout(() => {
+                btn.classList.remove('sending');
+                btn.classList.add('sent');
+                btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Transmitted!';
+                sucEl.style.display = 'block';
+                this.reset();
+                counter.textContent = '0 / 500 chars';
+                setTimeout(() => {
+                    btn.classList.remove('sent');
+                    btn.innerHTML = '<i class="bi bi-send me-2"></i>TRANSMIT MESSAGE';
+                }, 4000);
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>
