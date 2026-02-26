@@ -52,17 +52,22 @@ window.addEventListener('load', function () {
         const H = window.innerHeight;
 
         const walls = [
-            Bodies.rectangle(W / 2, H + 25, W, 50, { isStatic: true, render: { visible: false } }),       // floor
-            Bodies.rectangle(-25, H / 2, 50, H, { isStatic: true, render: { visible: false } }),       // left
-            Bodies.rectangle(W + 25, H / 2, 50, H, { isStatic: true, render: { visible: false } })        // right
+            Bodies.rectangle(W / 2, H + 25, 10000, 50, { isStatic: true, render: { visible: false } }),       // floor
+            Bodies.rectangle(-25, H / 2, 50, 10000, { isStatic: true, render: { visible: false } }),       // left
+            Bodies.rectangle(W + 25, H / 2, 50, 10000, { isStatic: true, render: { visible: false } })        // right
         ];
         Composite.add(engine.world, walls);
 
         // ── Create Project Blocks ─────────────────────
-        const BLOCK_W = 210, BLOCK_H = 90;
+        const isMobile = window.innerWidth < 768;
+        const BLOCK_W = isMobile ? 180 : 210;
+        const BLOCK_H = isMobile ? 80 : 90;
 
         const blocks = projects.map((p, i) => {
-            const b = Bodies.rectangle(180 + (i * 340), 220, BLOCK_W, BLOCK_H, {
+            const startX = isMobile ? (window.innerWidth / 2) + (Math.random() * 40 - 20) : (180 + (i * 340));
+            const startY = isMobile ? (100 + i * 110) : 220;
+
+            const b = Bodies.rectangle(startX, startY, BLOCK_W, BLOCK_H, {
                 restitution: 0.55,
                 friction: 0.2,
                 chamfer: { radius: 4 },
@@ -85,7 +90,7 @@ window.addEventListener('load', function () {
             div.innerHTML = `
         <div style="
             font-family:'JetBrains Mono',monospace;
-            font-size:.65rem; font-weight:700;
+            font-size:${isMobile ? '.55rem' : '.65rem'}; font-weight:700;
             letter-spacing:2px; text-transform:uppercase;
             color:${projects[i].color};
             text-shadow:0 0 12px ${projects[i].color}80;
@@ -93,7 +98,7 @@ window.addEventListener('load', function () {
             ${projects[i].name}
         </div>
         <div style="
-            font-size:.52rem; color:rgba(255,255,255,.4);
+            font-size:${isMobile ? '.45rem' : '.52rem'}; color:rgba(255,255,255,.4);
             letter-spacing:1px; text-transform:uppercase;">
             ${projects[i].tags[0]}
         </div>`;
@@ -213,7 +218,7 @@ window.addEventListener('load', function () {
         });
 
         // ── Navigate function ─────────────────────────
-        function navigate(destination) {
+        window.navigatePage = function (destination) {
             const intro = document.getElementById('intro-screen');
 
             intro.style.transition = 'opacity .7s ease, transform .7s ease';
@@ -233,6 +238,8 @@ window.addEventListener('load', function () {
                     setTimeout(() => window.location.href = 'projects.html', 400);
                 } else if (destination === 'about' || destination === 'about.html') {
                     window.location.href = 'about.html';
+                } else if (destination.startsWith('http')) {
+                    window.location.href = destination;
                 } else {
                     intro.style.display = 'none';
                 }
@@ -246,6 +253,10 @@ window.addEventListener('load', function () {
             render.options.height = window.innerHeight;
             render.canvas.width = window.innerWidth;
             render.canvas.height = window.innerHeight;
+
+            Matter.Body.setPosition(walls[0], { x: window.innerWidth / 2, y: window.innerHeight + 25 });
+            Matter.Body.setPosition(walls[1], { x: -25, y: window.innerHeight / 2 });
+            Matter.Body.setPosition(walls[2], { x: window.innerWidth + 25, y: window.innerHeight / 2 });
         });
 
     } catch (e) {

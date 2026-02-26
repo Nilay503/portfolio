@@ -75,8 +75,10 @@ body::after {
 
 #project-modal {
     display: none !important;
-    pointer-events: none; /* Prevents the modal layer from blocking mouse clicks on the sandbox */
+    pointer-events: none;
+    /* Prevents the modal layer from blocking mouse clicks on the sandbox */
 }
+
 /* =========================================================
    CUSTOM CURSOR
 ========================================================= */
@@ -134,6 +136,24 @@ body::after {
     background: rgba(0, 242, 255, .04);
     text-shadow: 0 0 10px rgba(0, 242, 255, .5);
     transform: translateY(-1px);
+}
+
+@media (max-width: 576px) {
+    #mainNav {
+        padding: 0.8rem 1rem !important;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .logo-brand span:first-child {
+        font-size: 0.9rem;
+    }
+
+    .nav-pill {
+        font-size: 0.65rem;
+        padding: 0.35rem 0.6rem;
+        letter-spacing: 1px;
+    }
 }
 
 /* =========================================================
@@ -363,6 +383,7 @@ body::after {
     border-radius: 50%;
     border: 1px solid rgba(0, 242, 255, .08);
     animation: spin 10s linear infinite;
+    pointer-events: none;
 }
 
 .portal-wrap::after {
@@ -372,6 +393,7 @@ body::after {
     border-radius: 50%;
     border: 1px dashed rgba(255, 0, 229, .06);
     animation: spin 16s linear infinite reverse;
+    pointer-events: none;
 }
 
 @keyframes spin {
@@ -512,6 +534,8 @@ body::after {
     cursor: none;
     transition: all .22s ease;
     position: relative;
+    z-index: 10;
+    pointer-events: auto;
     overflow: hidden;
     display: flex;
     align-items: center;

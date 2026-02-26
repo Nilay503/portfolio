@@ -17,12 +17,7 @@ tailwind.config = {
             fontFamily: {
                 mono: ['"JetBrains Mono"', 'monospace'],
                 sans: ['Inter', 'sans-serif'],
-            },
-            boxShadow: {
-                'neon-cyan': '0 0 20px rgba(0,242,255,0.4), 0 0 60px rgba(0,242,255,0.1)',
-                'neon-pink': '0 0 20px rgba(255,0,229,0.4), 0 0 60px rgba(255,0,229,0.1)',
-                'neon-green': '0 0 20px rgba(57,255,20,0.4),  0 0 60px rgba(57,255,20,0.1)',
-            },
+            }
         }
     }
-};
+}
